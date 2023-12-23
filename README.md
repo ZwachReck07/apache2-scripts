@@ -26,3 +26,7 @@
 - sudo systemctl restart apache2
 
 # Get ssl certificates
+
+- sudo snap install --classic certbot
+- sudo ln -s /snap/bin/certbot /usr/bin/certbot
+- sudo certbot certonly --standalone -d your_domain
