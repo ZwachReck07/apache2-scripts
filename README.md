@@ -1,10 +1,11 @@
 # enable virtual hosting
 
 - sudo mkdir -p /var/www/your_domain/public_html
-- sudo chown -R $USER:$USER /var/www/your_domain/public_html
+- your_domain="" (your domain here)
+- sudo chown -R $USER:$USER /var/www/${your_domain}/public_html
 - sudo chmod -R 755 /var/www
-- nano /var/www/your_domain/public_html/index.html
-- sudo nano /etc/apache2/sites-available/your_domain.conf
+- nano /var/www/${your_domain}/public_html/index.html
+- sudo nano /etc/apache2/sites-available/${your_domain}.conf
 
 ```
 <VirtualHost *:80>
@@ -20,7 +21,7 @@
 </VirtualHost>
 ```
 
-- sudo a2ensite your_domain.conf
+- sudo a2ensite ${your_domain}.conf
 - sudo a2dissite 000-default.conf
 - sudo apache2ctl configtest
 - sudo systemctl restart apache2
@@ -36,8 +37,8 @@
 
 - sudo snap install --classic certbot
 - sudo ln -s /snap/bin/certbot /usr/bin/certbot
-- sudo certbot certonly --standalone -d your_domain
-- sudo nano /etc/apache2/sites-available your_domain-le-ssl.conf
+- sudo certbot certonly --standalone -d ${your_domain}
+- sudo nano /etc/apache2/sites-available ${your_domain}-le-ssl.conf
 ```
 <IfModule mod_ssl.c>
 <VirtualHost *:443>
@@ -57,5 +58,5 @@ Include /etc/letsencrypt/options-ssl-apache.conf
 </VirtualHost>
 </IfModule>
 ```
--  sudo a2ensite your_domain-le-ssl.conf
+-  sudo a2ensite ${your_domain}-le-ssl.conf
 -  sudo systemctl restart apache2
