@@ -1,7 +1,7 @@
 # enable virtual hosting
 
-- sudo mkdir -p /var/www/your_domain/public_html
-- your_domain="" (your domain here)
+- your_domain=""
+- sudo mkdir -p /var/www/${your_domain}/public_html
 - sudo chown -R $USER:$USER /var/www/${your_domain}/public_html
 - sudo chmod -R 755 /var/www
 - nano /var/www/${your_domain}/public_html/index.html
