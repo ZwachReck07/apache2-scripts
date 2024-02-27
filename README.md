@@ -9,15 +9,14 @@
 
 ```
 <VirtualHost *:80>
-  ...
+
     ServerAdmin admin@your_domain
     ServerName your_domain
     ServerAlias www.your_domain
     DocumentRoot /var/www/your_domain/public_html
-    ...
     ErrorLog ${APACHE_LOG_DIR}/error.log
     CustomLog ${APACHE_LOG_DIR}/access.log combined
-    ...
+
 </VirtualHost>
 ```
 
