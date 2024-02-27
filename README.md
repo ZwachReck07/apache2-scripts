@@ -44,7 +44,7 @@
 
 	ServerAdmin admin@your_domain
 	DocumentRoot /var/www/your_domain/public_html
-	ServerName www.your_domain
+	ServerName your_domain
 	ServerAlias www.your_domain
 
 	ErrorLog ${APACHE_LOG_DIR}/error.log
